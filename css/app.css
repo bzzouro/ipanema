@@ -1,0 +1,1591 @@
+/* ==================================================
+   IPANEMA SOL & MAR
+   APP.CSS
+================================================== */
+
+:root{
+
+    --primary:#0B2233;
+    --gold:#D8A65A;
+    --gold-light:#EAC48A;
+    --background:#F6F7F9;
+    --card:#FFFFFF;
+    --text:#1F2937;
+    --gray:#7A7A7A;
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+    --radius:24px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--background);
+    color:var(--text);
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+.app{
+
+    min-height:100vh;
+    padding-bottom:95px;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    position:relative;
+
+    height:250px;
+
+    overflow:hidden;
+
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(10,25,40,.15),
+
+    rgba(10,25,40,.55),
+
+    rgba(10,25,40,.92)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5;
+
+}
+
+.logo{
+
+    width:170px;
+
+    filter:
+
+    drop-shadow(0 10px 30px rgba(0,0,0,.45));
+
+}
+
+/* ==========================================
+   WELCOME
+========================================== */
+
+.welcome{
+
+    background:white;
+
+    margin-top:-35px;
+
+    position:relative;
+
+    z-index:10;
+
+    border-radius:35px 35px 0 0;
+
+    padding:
+
+    35px
+    28px
+    25px;
+
+}
+
+.welcome h3{
+
+    color:var(--gold);
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.welcome h1{
+
+    font-size:32px;
+
+    color:var(--primary);
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:10px;
+
+}
+
+.welcome p{
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.quick-access{
+
+    padding:24px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    min-height:170px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card:active{
+
+    transform:scale(.97);
+
+}
+
+.icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    background:#EDF4F8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.icon svg{
+
+    width:30px;
+
+    height:30px;
+
+    color:var(--primary);
+
+}
+
+.card h2{
+
+    font-size:20px;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.card p{
+
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+.whatsapp{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #22C55E,
+
+    #16A34A
+
+    );
+
+}
+
+.whatsapp h2,
+
+.whatsapp p{
+
+    color:white;
+
+}
+
+.whatsapp .icon{
+
+    background:
+
+    rgba(255,255,255,.18);
+
+}
+
+.whatsapp .icon svg{
+
+    color:white;
+
+}
+
+/* ==========================================
+   HIGHLIGHTS
+========================================== */
+
+.highlights{
+
+    padding:0 24px 35px;
+
+}
+
+.highlights h2{
+
+    font-size:28px;
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--primary);
+
+    margin-bottom:22px;
+
+}
+
+.highlight{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:24px;
+
+}
+
+/* ==========================================
+   HIGHLIGHT CARD
+========================================== */
+
+.highlight-image{
+
+    height:190px;
+
+    overflow:hidden;
+
+}
+
+.highlight-image img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.highlight:hover .highlight-image img{
+
+    transform:scale(1.05);
+
+}
+
+.highlight-content{
+
+    padding:22px;
+
+}
+
+.highlight-content h3{
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.highlight-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.outline-btn{
+
+    background:transparent;
+
+    border:2px solid var(--gold);
+
+    color:var(--gold);
+
+    border-radius:14px;
+
+    padding:12px 20px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.outline-btn:hover{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+/* ==========================================
+   DRAWER
+========================================== */
+
+.drawer{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:100%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:999;
+
+    transition:right .35s ease;
+
+    overflow-y:auto;
+
+}
+
+.drawer.open{
+
+    right:0;
+
+}
+
+.drawer-header{
+
+    position:sticky;
+
+    top:0;
+
+    background:white;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+
+    z-index:20;
+
+}
+
+.drawer-header button{
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#EEF2F5;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.drawer-header button svg{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+.drawer-header h2{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    font-family:'Playfair Display',serif;
+
+}
+
+#drawerContent{
+
+    padding:30px;
+
+}
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.85);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.spinner{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:5px solid #E8E8E8;
+
+    border-top-color:var(--gold);
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   MENU INFERIOR
+========================================== */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:78px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    box-shadow:0 -8px 30px rgba(0,0,0,.08);
+
+    z-index:100;
+
+}
+
+.nav-item{
+
+    flex:1;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#9AA4AE;
+
+    transition:.25s;
+
+}
+
+.nav-item svg{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+.nav-item span{
+
+    font-size:12px;
+
+    font-weight:500;
+
+}
+
+.nav-item.active{
+
+    color:var(--gold);
+
+}
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+.card{
+
+    animation:fadeUp .6s ease both;
+
+}
+
+.card:nth-child(1){animation-delay:.05s;}
+.card:nth-child(2){animation-delay:.10s;}
+.card:nth-child(3){animation-delay:.15s;}
+.card:nth-child(4){animation-delay:.20s;}
+.card:nth-child(5){animation-delay:.25s;}
+.card:nth-child(6){animation-delay:.30s;}
+.card:nth-child(7){animation-delay:.35s;}
+.card:nth-child(8){animation-delay:.40s;}
+
+.highlight{
+
+    animation:fadeUp .7s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:430px){
+
+    .grid{
+
+        gap:14px;
+
+    }
+
+    .card{
+
+        min-height:145px;
+
+        padding:18px;
+
+    }
+
+    .card h2{
+
+        font-size:18px;
+
+    }
+
+    .card p{
+
+        font-size:13px;
+
+    }
+
+    .welcome h1{
+
+        font-size:28px;
+
+    }
+
+    .hero{
+
+        height:220px;
+
+    }
+
+}
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media(min-width:900px){
+
+    body{
+
+        background:#E9EEF2;
+
+    }
+
+    .app{
+
+        width:430px;
+
+        margin:auto;
+
+        background:white;
+
+        min-height:100vh;
+
+        box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+    }
+
+    .bottom-nav{
+
+        width:430px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        border-radius:20px 20px 0 0;
+
+    }
+
+    .drawer{
+
+        width:430px;
+
+        right:calc(50% - 645px);
+
+    }
+
+    .drawer.open{
+
+        right:calc(50% - 215px);
+
+    }
+
+}
+
+/* ==========================================
+   DRAWER CONTENT
+========================================== */
+
+.info-card{
+
+    background:#FAFAFA;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ECECEC;
+
+}
+
+.info-card h3{
+
+    color:#0B2233;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.info-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+.info-card ul{
+
+    padding-left:18px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+.value{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#0B2233;
+
+    margin-top:10px;
+
+    word-break:break-all;
+
+}
+
+.password{
+
+    letter-spacing:2px;
+
+}
+
+.gold-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#D8A65A;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    margin-top:15px;
+
+}
+
+.gold-btn:hover{
+
+    background:#C99546;
+
+}
+
+.place{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-bottom:16px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+    transition:.25s;
+
+}
+
+.place:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.place h3{
+
+    color:#0B2233;
+
+    margin-bottom:8px;
+
+    font-size:20px;
+
+}
+
+.place p{
+
+    color:#777;
+
+}
+
+
+.info-card{
+
+    animation:fadeCard .45s ease;
+
+}
+
+@keyframes fadeCard{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.gold-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.gold-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(216,166,90,.35);
+
+}
+
+/* ==========================================
+   INFO CARDS - DRAWER
+========================================== */
+
+.info-card {
+
+    background: #FAFAFA;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #ECECEC;
+
+    animation: fadeCard .45s ease;
+
+}
+
+.info-card h3 {
+
+    color: var(--primary);
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+.info-card p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+.info-card ul {
+
+    padding-left: 20px;
+
+    color: #666;
+
+    line-height: 1.9;
+
+}
+
+
+/* ==========================================
+   VALORES - WIFI
+========================================== */
+
+.value {
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    margin-top: 10px;
+
+    word-break: break-word;
+
+}
+
+.password {
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ==========================================
+   PLACE CARDS
+========================================== */
+
+.place {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid #ECECEC;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+
+    animation: fadeCard .45s ease;
+
+    transition: .25s;
+
+}
+
+.place:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.place h3 {
+
+    color: var(--primary);
+
+    margin-bottom: 8px;
+
+    font-size: 20px;
+
+}
+
+.place p {
+
+    color: #777;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ==========================================
+   BOTÃO DOURADO
+========================================== */
+
+.gold-btn {
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: var(--gold);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+}
+
+.gold-btn:hover {
+
+    background: #C99546;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(216,166,90,.30);
+
+}
+
+.gold-btn:active {
+
+    transform: scale(.97);
+
+}
+
+
+/* ==========================================
+   TOAST
+========================================== */
+
+#toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 100px;
+
+    transform:
+        translate(-50%, 20px);
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.20);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    z-index: 9999;
+
+    white-space: nowrap;
+
+}
+
+#toast.show {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* ==========================================
+   ANIMAÇÕES DO DRAWER
+========================================== */
+
+@keyframes fadeCard {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   MAPA
+========================================== */
+
+#drawerContent iframe {
+
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 430px) {
+
+    #drawerContent {
+
+        padding: 24px 20px 40px;
+
+    }
+
+    .info-card {
+
+        padding: 20px;
+
+    }
+
+    .place {
+
+        padding: 18px;
+
+    }
+
+    .gold-btn {
+
+        padding: 15px;
+
+    }
+
+}
+
+/* ==========================================
+   EXPLORE IPANEMA
+========================================== */
+
+.section-heading {
+
+    margin-bottom: 26px;
+
+}
+
+.section-heading span {
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+.section-heading h2 {
+
+    color: var(--primary);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+.section-heading p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.explore-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.explore-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.explore-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.12);
+
+}
+
+.explore-card:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+/* ==========================================
+   IMAGEM
+========================================== */
+
+.explore-image {
+
+    position: relative;
+
+    height: 145px;
+
+    overflow: hidden;
+
+}
+
+.explore-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .5s ease;
+
+}
+
+.explore-card:hover
+.explore-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.explore-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0,0,0,.55)
+        );
+
+}
+
+
+/* ==========================================
+   ÍCONE
+========================================== */
+
+.explore-icon {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    left: 14px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+.explore-icon svg {
+
+    width: 21px;
+
+    height: 21px;
+
+    color:
+        var(--primary);
+
+}
+
+
+/* ==========================================
+   TEXTO
+========================================== */
+
+.explore-content {
+
+    padding: 16px;
+
+}
+
+.explore-content h3 {
+
+    color:
+        var(--primary);
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+
+}
+
+.explore-content p {
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .explore-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
