@@ -3,12 +3,14 @@
 // APP.JS
 // ===========================================
 
+
+// ===========================================
+// INICIALIZAÇÃO
+// ===========================================
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Inicializa os ícones Lucide
-    if (typeof lucide !== "undefined") {
-        lucide.createIcons();
-    }
+    lucide.createIcons();
 
     initializeResidence();
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===========================================
-// DADOS DOS APARTAMENTOS
+// DADOS DAS RESIDÊNCIAS
 // ===========================================
 
 const residences = {
@@ -42,6 +44,7 @@ const residences = {
         }
 
     },
+
 
     2: {
 
@@ -68,36 +71,32 @@ let currentResidence = residences[1];
 
 
 // ===========================================
-// ELEMENTOS DO DRAWER
+// FAVORITOS
 // ===========================================
 
-const drawer = document.getElementById("drawer");
-
-const drawerTitle = document.getElementById("drawerTitle");
-
-const drawerContent = document.getElementById("drawerContent");
+let favorites = [];
 
 
 // ===========================================
-// IDENTIFICA O APARTAMENTO
+// IDENTIFICA A RESIDÊNCIA
 // ===========================================
 
 function initializeResidence() {
 
-    const params = new URLSearchParams(
-        window.location.search
-    );
+    const params =
+        new URLSearchParams(window.location.search);
 
-    const apt = params.get("apt") || "1";
+    const apt =
+        params.get("apt") || "1";
 
-    // Se o apartamento não existir,
-    // utiliza Residence I como padrão.
 
     currentResidence =
         residences[apt] || residences[1];
 
+
     const residenceElement =
         document.getElementById("residence");
+
 
     if (residenceElement) {
 
@@ -115,29 +114,38 @@ function initializeResidence() {
 
 function updateGreeting() {
 
-    const hour = new Date().getHours();
+    const hour =
+        new Date().getHours();
 
-    let greeting = "Boa noite";
+
+    let greeting =
+        "Boa noite 🌙";
+
 
     if (hour >= 5 && hour < 12) {
 
-        greeting = "Bom dia";
+        greeting =
+            "Bom dia ☀️";
 
     }
 
-    else if (hour >= 12 && hour < 18) {
 
-        greeting = "Boa tarde";
+    if (hour >= 12 && hour < 18) {
+
+        greeting =
+            "Boa tarde ☀️";
 
     }
+
 
     const greetingElement =
         document.getElementById("greeting");
 
+
     if (greetingElement) {
 
         greetingElement.innerHTML =
-            `${greeting} 👋`;
+            greeting;
 
     }
 
@@ -145,13 +153,15 @@ function updateGreeting() {
 
 
 // ===========================================
-// CARDS DA HOME
+// CARDS
 // ===========================================
 
 function initializeCards() {
 
     document
-        .querySelectorAll(".card")
+        .querySelectorAll(
+            ".explore-card, .outline-btn"
+        )
         .forEach(card => {
 
             card.addEventListener(
@@ -161,7 +171,12 @@ function initializeCards() {
                     const page =
                         card.dataset.page;
 
-                    openPage(page);
+
+                    if (page) {
+
+                        openPage(page);
+
+                    }
 
                 }
             );
@@ -175,17 +190,34 @@ function initializeCards() {
 // DRAWER
 // ===========================================
 
+const drawer =
+    document.getElementById("drawer");
+
+
+const drawerTitle =
+    document.getElementById("drawerTitle");
+
+
+const drawerContent =
+    document.getElementById("drawerContent");
+
+
+// ===========================================
+// INICIALIZA DRAWER
+// ===========================================
+
 function initializeDrawer() {
 
     const closeButton =
-        document.getElementById("closeDrawer");
+        document.getElementById(
+            "closeDrawer"
+        );
+
 
     if (closeButton) {
 
-        closeButton.addEventListener(
-            "click",
-            closeDrawer
-        );
+        closeButton.onclick =
+            closeDrawer;
 
     }
 
@@ -198,14 +230,7 @@ function initializeDrawer() {
 
 function openDrawer() {
 
-    if (drawer) {
-
-        drawer.classList.add("open");
-
-        document.body.style.overflow =
-            "hidden";
-
-    }
+    drawer.classList.add("open");
 
 }
 
@@ -216,25 +241,23 @@ function openDrawer() {
 
 function closeDrawer() {
 
-    if (drawer) {
-
-        drawer.classList.remove("open");
-
-        document.body.style.overflow =
-            "";
-
-    }
+    drawer.classList.remove("open");
 
 }
 
 
 // ===========================================
-// ABRIR CONTEÚDO
+// ABRIR PÁGINA
 // ===========================================
 
 function openPage(page) {
 
     switch (page) {
+
+
+        // ================================
+        // WIFI
+        // ================================
 
         case "wifi":
 
@@ -243,12 +266,20 @@ function openPage(page) {
             break;
 
 
+        // ================================
+        // HOSPEDAGEM
+        // ================================
+
         case "house":
 
             showHouse();
 
             break;
 
+
+        // ================================
+        // RESTAURANTES
+        // ================================
 
         case "restaurants":
 
@@ -257,12 +288,42 @@ function openPage(page) {
             break;
 
 
+        // ================================
+        // CAFÉS
+        // ================================
+
+        case "cafes":
+
+            showCafes();
+
+            break;
+
+
+        // ================================
+        // BARES
+        // ================================
+
+        case "bars":
+
+            showBars();
+
+            break;
+
+
+        // ================================
+        // PRAIAS
+        // ================================
+
         case "beaches":
 
             showBeaches();
 
             break;
 
+
+        // ================================
+        // MERCADOS
+        // ================================
 
         case "markets":
 
@@ -271,12 +332,42 @@ function openPage(page) {
             break;
 
 
+        // ================================
+        // FARMÁCIAS
+        // ================================
+
+        case "pharmacies":
+
+            showPharmacies();
+
+            break;
+
+
+        // ================================
+        // ACADEMIAS
+        // ================================
+
+        case "gyms":
+
+            showGyms();
+
+            break;
+
+
+        // ================================
+        // TRANSPORTE
+        // ================================
+
         case "transport":
 
             showTransport();
 
             break;
 
+
+        // ================================
+        // MAPA
+        // ================================
 
         case "map":
 
@@ -285,12 +376,20 @@ function openPage(page) {
             break;
 
 
+        // ================================
+        // FAVORITOS
+        // ================================
+
         case "favorites":
 
             showFavorites();
 
             break;
 
+
+        // ================================
+        // CONTATO
+        // ================================
 
         case "contact":
 
@@ -299,19 +398,17 @@ function openPage(page) {
             break;
 
 
+        // ================================
+        // WHATSAPP
+        // ================================
+
         case "whatsapp":
 
-            openWhatsApp();
+            window.open(
+                "https://wa.me/5521999999999"
+            );
 
             break;
-
-
-        default:
-
-            console.warn(
-                "Página não encontrada:",
-                page
-            );
 
     }
 
@@ -332,8 +429,11 @@ function initializeNavigation() {
                 "click",
                 () => {
 
+
                     document
-                        .querySelectorAll(".nav-item")
+                        .querySelectorAll(
+                            ".nav-item"
+                        )
                         .forEach(nav => {
 
                             nav.classList.remove(
@@ -342,22 +442,26 @@ function initializeNavigation() {
 
                         });
 
+
                     item.classList.add(
                         "active"
                     );
 
+
                     const page =
                         item.dataset.page;
 
-                    if (page !== "home") {
+
+                    if (
+                        page !== "home"
+                    ) {
 
                         openPage(page);
 
-                    }
-
-                    else {
+                    } else {
 
                         closeDrawer();
+
 
                         window.scrollTo({
 
@@ -386,11 +490,12 @@ function showWifi() {
     drawerTitle.innerHTML =
         "Wi-Fi";
 
+
     drawerContent.innerHTML = `
 
         <div class="info-card">
 
-            <h3>Rede</h3>
+            <h3>📶 Rede</h3>
 
             <div class="value">
 
@@ -403,7 +508,7 @@ function showWifi() {
 
         <div class="info-card">
 
-            <h3>Senha</h3>
+            <h3>🔐 Senha</h3>
 
             <div class="value password">
 
@@ -416,13 +521,15 @@ function showWifi() {
 
         <button
             class="gold-btn"
-            onclick="copyWifiPassword()">
+            onclick="copyWifiPassword()"
+        >
 
             Copiar senha
 
         </button>
 
     `;
+
 
     openDrawer();
 
@@ -435,40 +542,16 @@ function showWifi() {
 
 function copyWifiPassword() {
 
-    const password =
-        currentResidence.wifi.password;
+    navigator.clipboard.writeText(
 
-    if (
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-    ) {
+        currentResidence.wifi.password
 
-        navigator.clipboard
-            .writeText(password)
-            .then(() => {
+    );
 
-                showToast(
-                    "Senha copiada!"
-                );
 
-            })
-            .catch(() => {
-
-                showToast(
-                    "Não foi possível copiar."
-                );
-
-            });
-
-    }
-
-    else {
-
-        showToast(
-            "Copie a senha manualmente."
-        );
-
-    }
+    showToast(
+        "Senha copiada!"
+    );
 
 }
 
@@ -480,17 +563,18 @@ function copyWifiPassword() {
 function showHouse() {
 
     drawerTitle.innerHTML =
-        "Sua Hospedagem";
+        "🏠 Sua Hospedagem";
+
 
     drawerContent.innerHTML = `
 
         <div class="info-card">
 
-            <h3>Endereço</h3>
+            <h3>📍 Endereço</h3>
 
             <p>
 
-                Rua Visconde de Pirajá, 240/502<br>
+                Rua Prudente de Morais, XXX<br>
 
                 Ipanema - Rio de Janeiro
 
@@ -499,9 +583,12 @@ function showHouse() {
 
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Rua Visconde de Pirajá, 240 Ipanema Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Rua Prudente de Morais Ipanema'
+                )
+                "
+            >
 
                 Abrir no Google Maps
 
@@ -512,7 +599,7 @@ function showHouse() {
 
         <div class="info-card">
 
-            <h3>Check-in</h3>
+            <h3>🕒 Check-in</h3>
 
             <p>
 
@@ -525,7 +612,7 @@ function showHouse() {
 
         <div class="info-card">
 
-            <h3>Check-out</h3>
+            <h3>🧳 Check-out</h3>
 
             <p>
 
@@ -538,22 +625,29 @@ function showHouse() {
 
         <div class="info-card">
 
-            <h3>Regras da Casa</h3>
+            <h3>📋 Regras da Casa</h3>
 
             <ul>
 
-                <li>Não é permitido fumar.</li>
-
-                <li>Silêncio após 22h.</li>
-
-                <li>Não são permitidos animais.</li>
-
                 <li>
-                    Apague as luzes ao sair.
+                    🚭 Não é permitido fumar.
                 </li>
 
                 <li>
-                    Feche portas e janelas.
+                    🔇 Silêncio após 22h.
+                </li>
+
+                <li>
+                    🐶 Não são permitidos animais.
+                </li>
+
+                <li>
+                    💡 Apague luzes e
+                    ar-condicionado ao sair.
+                </li>
+
+                <li>
+                    🔐 Feche portas e janelas.
                 </li>
 
             </ul>
@@ -563,20 +657,25 @@ function showHouse() {
 
         <div class="info-card">
 
-            <h3>Emergência</h3>
+            <h3>☎ Emergência</h3>
 
             <p>
 
-                Vivian<br>
+                Alexandre<br>
 
-                +55 21 98521-1001
+                +55 21 99999-9999
 
             </p>
 
 
             <button
                 class="gold-btn"
-                onclick="openWhatsApp()">
+                onclick="
+                window.open(
+                'https://wa.me/5521999999999'
+                )
+                "
+            >
 
                 WhatsApp
 
@@ -585,6 +684,7 @@ function showHouse() {
         </div>
 
     `;
+
 
     openDrawer();
 
@@ -598,7 +698,8 @@ function showHouse() {
 function showRestaurants() {
 
     drawerTitle.innerHTML =
-        "Restaurantes";
+        "🍽 Restaurantes";
+
 
     drawerContent.innerHTML = `
 
@@ -612,11 +713,15 @@ function showRestaurants() {
                 ⭐ 4.8 • 350 m
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Zazá Bistrô Ipanema Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Zaza+Bistro+Ipanema'
+                )
+                "
+            >
 
                 Abrir no Google Maps
 
@@ -635,11 +740,15 @@ function showRestaurants() {
                 ⭐ 4.7 • 450 m
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Gurumê Ipanema Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Gurume+Ipanema'
+                )
+                "
+            >
 
                 Abrir no Google Maps
 
@@ -658,11 +767,15 @@ function showRestaurants() {
                 ⭐ 4.5 • 500 m
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Frontera Ipanema Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Frontera+Ipanema'
+                )
+                "
+            >
 
                 Abrir no Google Maps
 
@@ -671,6 +784,207 @@ function showRestaurants() {
         </div>
 
     `;
+
+
+    openDrawer();
+
+}
+
+
+// ===========================================
+// CAFÉS
+// ===========================================
+
+function showCafes() {
+
+    drawerTitle.innerHTML =
+        "☕ Cafés";
+
+
+    drawerContent.innerHTML = `
+
+        <div class="place">
+
+            <h3>
+                Café do Alto
+            </h3>
+
+            <p>
+                Café brasileiro e ambiente acolhedor.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Cafe+do+Alto+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Gringo Café
+            </h3>
+
+            <p>
+                Café da manhã e brunch.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Gringo+Cafe+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                The Bakers
+            </h3>
+
+            <p>
+                Padaria, cafés e doces.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=The+Bakers+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    openDrawer();
+
+}
+
+
+// ===========================================
+// BARES
+// ===========================================
+
+function showBars() {
+
+    drawerTitle.innerHTML =
+        "🍹 Bares";
+
+
+    drawerContent.innerHTML = `
+
+        <div class="place">
+
+            <h3>
+                Bar Belmonte
+            </h3>
+
+            <p>
+                Boteco carioca clássico.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Bar+Belmonte+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Bar Garota de Ipanema
+            </h3>
+
+            <p>
+                Um dos bares mais tradicionais do bairro.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Garota+de+Ipanema+bar'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Bar do Mineiro
+            </h3>
+
+            <p>
+                Comida brasileira e ambiente descontraído.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Bar+do+Mineiro+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+    `;
+
 
     openDrawer();
 
@@ -684,7 +998,8 @@ function showRestaurants() {
 function showBeaches() {
 
     drawerTitle.innerHTML =
-        "Praias";
+        "🏖 Praias";
+
 
     drawerContent.innerHTML = `
 
@@ -698,13 +1013,17 @@ function showBeaches() {
                 350 metros
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Praia de Ipanema Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Praia+de+Ipanema'
+                )
+                "
+            >
 
-                Ver no mapa
+                Ver no Google Maps
 
             </button>
 
@@ -721,13 +1040,17 @@ function showBeaches() {
                 900 metros
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Praia do Arpoador Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Praia+do+Arpoador'
+                )
+                "
+            >
 
-                Ver no mapa
+                Ver no Google Maps
 
             </button>
 
@@ -741,22 +1064,27 @@ function showBeaches() {
             </h3>
 
             <p>
-                Aproximadamente 15 minutos
+                Aproximadamente 15 minutos.
             </p>
+
 
             <button
                 class="gold-btn"
-                onclick="openMaps(
-                    'Praia de Copacabana Rio de Janeiro'
-                )">
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Praia+de+Copacabana'
+                )
+                "
+            >
 
-                Ver no mapa
+                Ver no Google Maps
 
             </button>
 
         </div>
 
     `;
+
 
     openDrawer();
 
@@ -770,7 +1098,8 @@ function showBeaches() {
 function showMarkets() {
 
     drawerTitle.innerHTML =
-        "Mercados";
+        "🛒 Mercados";
+
 
     drawerContent.innerHTML = `
 
@@ -781,8 +1110,22 @@ function showMarkets() {
             </h3>
 
             <p>
-                250 metros
+                Mercado próximo à residência.
             </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Supermercado+Zona+Sul+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
 
         </div>
 
@@ -794,8 +1137,22 @@ function showMarkets() {
             </h3>
 
             <p>
-                450 metros
+                Supermercado completo.
             </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Pao+de+Acucar+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
 
         </div>
 
@@ -807,12 +1164,200 @@ function showMarkets() {
             </h3>
 
             <p>
-                500 metros
+                Frutas, legumes e produtos frescos.
             </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Hortifruti+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
 
         </div>
 
     `;
+
+
+    openDrawer();
+
+}
+
+
+// ===========================================
+// FARMÁCIAS
+// ===========================================
+
+function showPharmacies() {
+
+    drawerTitle.innerHTML =
+        "💊 Farmácias";
+
+
+    drawerContent.innerHTML = `
+
+        <div class="place">
+
+            <h3>
+                Drogasil
+            </h3>
+
+            <p>
+                Farmácia e produtos de saúde.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Drogasil+Ipanema+Rio+de+Janeiro'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Pacheco
+            </h3>
+
+            <p>
+                Farmácia próxima à residência.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Drogarias+Pacheco+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Drogaria Venancio
+            </h3>
+
+            <p>
+                Farmácia e conveniência.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Drogaria+Venancio+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    openDrawer();
+
+}
+
+
+// ===========================================
+// ACADEMIAS
+// ===========================================
+
+function showGyms() {
+
+    drawerTitle.innerHTML =
+        "🏋 Academias";
+
+
+    drawerContent.innerHTML = `
+
+        <div class="place">
+
+            <h3>
+                Bodytech Ipanema
+            </h3>
+
+            <p>
+                Academia completa e moderna.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Bodytech+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <div class="place">
+
+            <h3>
+                Smart Fit Ipanema
+            </h3>
+
+            <p>
+                Academia com acesso diário.
+            </p>
+
+
+            <button
+                class="gold-btn"
+                onclick="
+                window.open(
+                'https://maps.google.com/?q=Smart+Fit+Ipanema'
+                )
+                "
+            >
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+    `;
+
 
     openDrawer();
 
@@ -826,18 +1371,19 @@ function showMarkets() {
 function showTransport() {
 
     drawerTitle.innerHTML =
-        "Transporte";
+        "🚇 Transporte";
+
 
     drawerContent.innerHTML = `
 
         <div class="info-card">
 
             <h3>
-                Metrô Nossa Senhora da Paz
+                🚇 Metrô Nossa Senhora da Paz
             </h3>
 
             <p>
-                450 metros
+                Aproximadamente 450 metros.
             </p>
 
         </div>
@@ -846,7 +1392,7 @@ function showTransport() {
         <div class="info-card">
 
             <h3>
-                Uber
+                🚗 Uber
             </h3>
 
             <p>
@@ -859,17 +1405,17 @@ function showTransport() {
         <div class="info-card">
 
             <h3>
-                Táxi
+                🚕 Táxi
             </h3>
 
             <p>
-                Ponto na Rua Visconde
-                de Pirajá.
+                Pontos disponíveis nas principais ruas de Ipanema.
             </p>
 
         </div>
 
     `;
+
 
     openDrawer();
 
@@ -883,13 +1429,16 @@ function showTransport() {
 function showMap() {
 
     drawerTitle.innerHTML =
-        "Mapa";
+        "🗺 Mapa";
+
 
     drawerContent.innerHTML = `
 
         <iframe
 
-            src="https://www.google.com/maps?q=Ipanema,Rio+de+Janeiro&output=embed"
+            src="
+            https://www.google.com/maps?q=Ipanema,Rio+de+Janeiro&output=embed
+            "
 
             width="100%"
 
@@ -900,11 +1449,12 @@ function showMap() {
                 border-radius:18px;
             "
 
-            loading="lazy">
+            loading="lazy"
 
-        </iframe>
+        ></iframe>
 
     `;
+
 
     openDrawer();
 
@@ -918,7 +1468,8 @@ function showMap() {
 function showFavorites() {
 
     drawerTitle.innerHTML =
-        "Favoritos";
+        "❤️ Favoritos";
+
 
     drawerContent.innerHTML = `
 
@@ -939,6 +1490,7 @@ function showFavorites() {
 
     `;
 
+
     openDrawer();
 
 }
@@ -951,29 +1503,35 @@ function showFavorites() {
 function showContact() {
 
     drawerTitle.innerHTML =
-        "Contato";
+        "📞 Contato";
+
 
     drawerContent.innerHTML = `
 
         <div class="info-card">
 
             <h3>
-                Precisa de ajuda?
+                Ipanema Sol & Mar
             </h3>
 
             <p>
 
-                Estamos à disposição
-                para ajudar durante
-                sua estadia.
+                Estamos disponíveis
+                para ajudar durante sua estadia.
 
             </p>
 
+
             <button
                 class="gold-btn"
-                onclick="openWhatsApp()">
+                onclick="
+                window.open(
+                'https://wa.me/5521999999999'
+                )
+                "
+            >
 
-                Falar pelo WhatsApp
+                💬 Falar pelo WhatsApp
 
             </button>
 
@@ -981,43 +1539,8 @@ function showContact() {
 
     `;
 
+
     openDrawer();
-
-}
-
-
-// ===========================================
-// WHATSAPP
-// ===========================================
-
-function openWhatsApp() {
-
-    const phone =
-        "5521999999999";
-
-    window.open(
-        `https://wa.me/${phone}`,
-        "_blank",
-        "noopener,noreferrer"
-    );
-
-}
-
-
-// ===========================================
-// GOOGLE MAPS
-// ===========================================
-
-function openMaps(place) {
-
-    const url =
-        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
-
-    window.open(
-        url,
-        "_blank",
-        "noopener,noreferrer"
-    );
 
 }
 
@@ -1028,25 +1551,41 @@ function openMaps(place) {
 
 function showToast(message) {
 
+
     let toast =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
+
 
     if (!toast) {
 
+
         toast =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         toast.id =
             "toast";
 
-        document.body.appendChild(toast);
+
+        document.body.appendChild(
+            toast
+        );
 
     }
 
-    toast.textContent =
+
+    toast.innerHTML =
         message;
 
-    toast.classList.add("show");
+
+    toast.classList.add(
+        "show"
+    );
+
 
     setTimeout(() => {
 
