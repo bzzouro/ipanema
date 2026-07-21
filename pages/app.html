@@ -3,541 +3,757 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Ipanema Sol & Mar Residence</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Ipanema Sol & Mar Residence</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="app.css">
+    <!-- GOOGLE FONTS -->
 
-<script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="app.css"
+    >
+
+
+    <!-- LUCIDE ICONS -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 
+
 <body>
+
 
 <div class="app">
 
-<header class="hero">
 
-<img src="../assets/hero.jpg" class="hero-image">
+    <!-- ==========================================
+         HERO
+    =========================================== -->
 
-<div class="hero-overlay"></div>
+    <header class="hero">
 
-<div class="hero-content">
+        <img
+            src="../assets/hero.jpg"
+            class="hero-image"
+            alt="Ipanema, Rio de Janeiro"
+        >
 
-<img src="../assets/logo.png" class="logo">
+        <div class="hero-overlay"></div>
 
-</div>
+        <div class="hero-content">
 
-</header>
+            <img
+                src="../assets/logo.png"
+                class="logo"
+                alt="Ipanema Sol & Mar"
+            >
 
-<section class="welcome">
+        </div>
 
-<h3 id="greeting">
-Boa tarde 👋
-</h3>
+    </header>
 
-<h1 id="residence">
-Ipanema Sol & Mar Residence I
-</h1>
 
-<p>
 
-Como podemos ajudar hoje?
+    <!-- ==========================================
+         WELCOME
+    =========================================== -->
 
-</p>
+    <section class="welcome">
 
-</section>
+        <h3 id="greeting">
 
-<section class="quick-access">
+            Boa tarde 👋
 
-    <div class="section-heading">
+        </h3>
 
-        <span>DISCOVER THE NEIGHBORHOOD</span>
 
-        <h2>Explore Ipanema</h2>
+        <h1 id="residence">
+
+            Ipanema Sol & Mar Residence I
+
+        </h1>
+
 
         <p>
-            Tudo o que você precisa,
-            a poucos passos da sua hospedagem.
+
+            Como podemos ajudar hoje?
+
         </p>
 
-    </div>
-
-
-    <div class="explore-grid">
-
-
-        <!-- RESTAURANTES -->
-
-        <article
-            class="explore-card"
-            data-page="restaurants"
-        >
-
-            <div class="explore-image">
-
-                <img
-                    src="../assets/images/restaurants.jpg"
-                    alt="Restaurantes em Ipanema"
-                >
-
-                <div class="explore-overlay"></div>
-
-                <div class="explore-icon">
-
-                    <i data-lucide="utensils"></i>
-
-                </div>
-
-            </div>
-
-            <div class="explore-content">
-
-                <h3>Restaurantes</h3>
-
-                <p>
-                    Sabores do Rio e gastronomia
-                    internacional.
-                </p>
-
-            </div>
-
-        </article>
+    </section>
 
 
 
-        <!-- CAFÉS -->
+    <!-- ==========================================
+         EXPLORE IPANEMA
+    =========================================== -->
 
-        <article
-            class="explore-card"
-            data-page="cafes"
-        >
+    <section class="quick-access">
 
-            <div class="explore-image">
 
-                <img
-                    src="../assets/images/cafes.png"
-                    alt="Cafés em Ipanema"
-                >
+        <div class="section-heading">
 
-                <div class="explore-overlay"></div>
+            <span>
+                DISCOVER THE NEIGHBORHOOD
+            </span>
 
-                <div class="explore-icon">
 
-                    <i data-lucide="coffee"></i>
+            <h2>
+                Explore Ipanema
+            </h2>
+
+
+            <p>
+
+                Tudo o que você precisa,
+                a poucos passos da sua hospedagem.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="explore-grid">
+
+
+            <!-- RESTAURANTES -->
+
+            <article
+                class="explore-card"
+                data-page="restaurants"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/restaurants.jpg"
+                        alt="Restaurantes em Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="utensils"></i>
+
+                    </div>
 
                 </div>
 
-            </div>
 
-            <div class="explore-content">
+                <div class="explore-content">
 
-                <h3>Cafés</h3>
+                    <h3>
+                        Restaurantes
+                    </h3>
 
-                <p>
-                    Para começar o dia
-                    no melhor estilo carioca.
-                </p>
+                    <p>
 
-            </div>
+                        Sabores do Rio e gastronomia
+                        internacional.
 
-        </article>
-
-
-
-        <!-- BARES -->
-
-        <article
-            class="explore-card"
-            data-page="bars"
-        >
-
-            <div class="explore-image">
-
-                <img
-                    src="../assets/images/bars.jpg"
-                    alt="Bares em Ipanema"
-                >
-
-                <div class="explore-overlay"></div>
-
-                <div class="explore-icon">
-
-                    <i data-lucide="wine"></i>
+                    </p>
 
                 </div>
 
-            </div>
-
-            <div class="explore-content">
-
-                <h3> Bares</h3>
-
-                <p>
-                    Drinks, música e
-                    noites cariocas.
-                </p>
-
-            </div>
-
-        </article>
+            </article>
 
 
 
-        <!-- PRAIAS -->
+            <!-- CAFÉS -->
 
-        <article
-            class="explore-card"
-            data-page="beaches"
-        >
+            <article
+                class="explore-card"
+                data-page="cafes"
+            >
 
-            <div class="explore-image">
+                <div class="explore-image">
 
-                <img
-                    src="../assets/images/beaches.png"
-                    alt="Praias de Ipanema"
-                >
+                    <img
+                        src="../assets/images/cafes.jpg"
+                        alt="Cafés em Ipanema"
+                    >
 
-                <div class="explore-overlay"></div>
+                    <div class="explore-overlay"></div>
 
-                <div class="explore-icon">
 
-                    <i data-lucide="waves"></i>
+                    <div class="explore-icon">
+
+                        <i data-lucide="coffee"></i>
+
+                    </div>
 
                 </div>
 
-            </div>
 
-            <div class="explore-content">
+                <div class="explore-content">
 
-                <h3>Praias</h3>
+                    <h3>
+                        Cafés
+                    </h3>
 
-                <p>
-                    Sol, mar e os melhores
-                    points da orla.
-                </p>
+                    <p>
 
-            </div>
+                        Para começar o dia
+                        no melhor estilo carioca.
 
-        </article>
-
-
-
-        <!-- MERCADOS -->
-
-        <article
-            class="explore-card"
-            data-page="markets"
-        >
-
-            <div class="explore-image">
-
-                <img
-                    src="../assets/images/markets.jpg"
-                    alt="Mercados em Ipanema"
-                >
-
-                <div class="explore-overlay"></div>
-
-                <div class="explore-icon">
-
-                    <i data-lucide="shopping-bag"></i>
+                    </p>
 
                 </div>
 
-            </div>
-
-            <div class="explore-content">
-
-                <h3>Mercados</h3>
-
-                <p>
-                    Tudo para sua estadia
-                    ficar ainda mais confortável.
-                </p>
-
-            </div>
-
-        </article>
+            </article>
 
 
 
-        <!-- FARMÁCIAS -->
+            <!-- BARES -->
 
-        <article
-            class="explore-card"
-            data-page="pharmacies"
-        >
+            <article
+                class="explore-card"
+                data-page="bars"
+            >
 
-            <div class="explore-image">
+                <div class="explore-image">
 
-                <img
-                    src="../assets/images/pharmacies.jpg"
-                    alt="Farmácias em Ipanema"
-                >
+                    <img
+                        src="../assets/images/bars.jpg"
+                        alt="Bares em Ipanema"
+                    >
 
-                <div class="explore-overlay"></div>
+                    <div class="explore-overlay"></div>
 
-                <div class="explore-icon">
 
-                    <i data-lucide="pill"></i>
+                    <div class="explore-icon">
+
+                        <i data-lucide="wine"></i>
+
+                    </div>
 
                 </div>
 
+
+                <div class="explore-content">
+
+                    <h3>
+                        Bares
+                    </h3>
+
+                    <p>
+
+                        Drinks, música e
+                        noites cariocas.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRAIAS -->
+
+            <article
+                class="explore-card"
+                data-page="beaches"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/beaches.jpg"
+                        alt="Praias de Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="waves"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explore-content">
+
+                    <h3>
+                        Praias
+                    </h3>
+
+                    <p>
+
+                        Sol, mar e os melhores
+                        points da orla.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MERCADOS -->
+
+            <article
+                class="explore-card"
+                data-page="markets"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/markets.jpg"
+                        alt="Mercados em Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="shopping-bag"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explore-content">
+
+                    <h3>
+                        Mercados
+                    </h3>
+
+                    <p>
+
+                        Tudo para sua estadia
+                        ficar ainda mais confortável.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- FARMÁCIAS -->
+
+            <article
+                class="explore-card"
+                data-page="pharmacies"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/pharmacies.jpg"
+                        alt="Farmácias em Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="pill"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explore-content">
+
+                    <h3>
+                        Farmácias
+                    </h3>
+
+                    <p>
+
+                        As opções mais próximas
+                        da residência.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ACADEMIAS -->
+
+            <article
+                class="explore-card"
+                data-page="gyms"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/gyms.jpg"
+                        alt="Academias em Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="dumbbell"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explore-content">
+
+                    <h3>
+                        Academias
+                    </h3>
+
+                    <p>
+
+                        Mantenha sua rotina
+                        durante a viagem.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- TRANSPORTE -->
+
+            <article
+                class="explore-card"
+                data-page="transport"
+            >
+
+                <div class="explore-image">
+
+                    <img
+                        src="../assets/images/transport.jpg"
+                        alt="Transporte em Ipanema"
+                    >
+
+                    <div class="explore-overlay"></div>
+
+
+                    <div class="explore-icon">
+
+                        <i data-lucide="train-front"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="explore-content">
+
+                    <h3>
+                        Transporte
+                    </h3>
+
+                    <p>
+
+                        Metrô, táxi, Uber
+                        e como se locomover.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         DESTAQUES
+    =========================================== -->
+
+    <section class="highlights">
+
+
+        <h2>
+            Destaques
+        </h2>
+
+
+        <!-- PRAIA DE IPANEMA -->
+
+        <div class="highlight">
+
+
+            <div class="highlight-image">
+
+                <img
+                    src="../assets/ipanema.jpg"
+                    alt="Praia de Ipanema"
+                >
+
             </div>
 
-            <div class="explore-content">
 
-                <h3>Farmácias</h3>
+            <div class="highlight-content">
+
+
+                <h3>
+                    Praia de Ipanema
+                </h3>
+
 
                 <p>
-                    As opções mais próximas
+
+                    Apenas 350 metros
                     da residência.
+
                 </p>
 
-            </div>
 
-        </article>
-
-
-
-        <!-- ACADEMIAS -->
-
-        <article
-            class="explore-card"
-            data-page="gyms"
-        >
-
-            <div class="explore-image">
-
-                <img
-                    src="../assets/images/gyms.jpg"
-                    alt="Academias em Ipanema"
+                <button
+                    class="outline-btn"
+                    data-page="beaches"
                 >
 
-                <div class="explore-overlay"></div>
+                    Explorar
 
-                <div class="explore-icon">
+                </button>
 
-                    <i data-lucide="dumbbell"></i>
-
-                </div>
 
             </div>
 
-            <div class="explore-content">
-
-                <h3>Academias</h3>
-
-                <p>
-                    Mantenha sua rotina
-                    durante a viagem.
-                </p>
-
-            </div>
-
-        </article>
+        </div>
 
 
 
-        <!-- TRANSPORTE -->
+        <!-- CRISTO REDENTOR -->
 
-        <article
-            class="explore-card"
-            data-page="transport"
-        >
+        <div class="highlight">
 
-            <div class="explore-image">
+
+            <div class="highlight-image">
 
                 <img
-                    src="../assets/images/transport.jpg"
-                    alt="Transporte em Ipanema"
+                    src="../assets/copacabana.jpg"
+                    alt="Cristo Redentor"
                 >
 
-                <div class="explore-overlay"></div>
-
-                <div class="explore-icon">
-
-                    <i data-lucide="train-front"></i>
-
-                </div>
-
             </div>
 
-            <div class="explore-content">
 
-                <h3>Transporte</h3>
+            <div class="highlight-content">
+
+
+                <h3>
+                    Cristo Redentor
+                </h3>
+
 
                 <p>
-                    Metrô, táxi, Uber
-                    e como se locomover.
+
+                    Um dos cartões-postais
+                    mais famosos do mundo.
+
                 </p>
+
+
+                <button
+                    class="outline-btn"
+                    data-page="map"
+                >
+
+                    Ver rota
+
+                </button>
+
 
             </div>
 
-        </article>
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     DRAWER
+=========================================== -->
+
+<div
+    id="drawer"
+    class="drawer"
+>
+
+
+    <div class="drawer-header">
+
+
+        <button id="closeDrawer">
+
+            <i data-lucide="arrow-left"></i>
+
+        </button>
+
+
+        <h2 id="drawerTitle">
+
+            Título
+
+        </h2>
 
 
     </div>
 
-</section>
 
-<section class="highlights">
+    <div id="drawerContent">
 
-<h2>
+        <!-- Conteúdo carregado via JavaScript -->
 
-Destaques
+    </div>
 
-</h2>
-
-<div class="highlight">
-
-<div class="highlight-image">
-
-<img src="../assets/ipanema.jpg" alt="Praia de Ipanema">
 
 </div>
 
-<div class="highlight-content">
 
-<h3>Praia de Ipanema</h3>
 
-<p>
+<!-- ==========================================
+     LOADING
+=========================================== -->
 
-Apenas 350 metros da residência.
+<div
+    id="loading"
+    class="loading hidden"
+>
 
-</p>
-
-<button class="outline-btn" data-page="beaches">
-
-Explorar
-
-</button>
+    <div class="spinner"></div>
 
 </div>
 
-</div>
 
-<div class="highlight">
 
-<div class="highlight-image">
-
-<img src="../assets/copacabana.jpg" alt="Cristo Redentor">
-
-</div>
-
-<div class="highlight-content">
-
-<h3>Cristo Redentor</h3>
-
-<p>
-
-Um dos cartões-postais mais famosos do mundo.
-
-</p>
-
-<button class="outline-btn" data-page="map">
-
-Ver rota
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-<!-- PAINEL LATERAL -->
-
-<div id="drawer" class="drawer">
-
-<div class="drawer-header">
-
-<button id="closeDrawer">
-
-<i data-lucide="arrow-left"></i>
-
-</button>
-
-<h2 id="drawerTitle">
-
-Título
-
-</h2>
-
-</div>
-
-<div id="drawerContent">
-
-<!-- Conteúdo carregado via JavaScript -->
-
-</div>
-
-</div>
-
-<!-- LOADING -->
-
-<div id="loading" class="loading hidden">
-
-<div class="spinner"></div>
-
-</div>
-
-<!-- MENU INFERIOR -->
+<!-- ==========================================
+     MENU INFERIOR
+=========================================== -->
 
 <nav class="bottom-nav">
 
-<button class="nav-item active" data-page="home">
 
-<i data-lucide="house"></i>
+    <button
+        class="nav-item active"
+        data-page="home"
+    >
 
-<span>Home</span>
+        <i data-lucide="house"></i>
 
-</button>
+        <span>
+            Home
+        </span>
 
-<button class="nav-item" data-page="map">
+    </button>
 
-<i data-lucide="map-pinned"></i>
 
-<span>Mapa</span>
+    <button
+        class="nav-item"
+        data-page="map"
+    >
 
-</button>
+        <i data-lucide="map-pinned"></i>
 
-<button class="nav-item" data-page="favorites">
+        <span>
+            Mapa
+        </span>
 
-<i data-lucide="heart"></i>
+    </button>
 
-<span>Favoritos</span>
 
-</button>
+    <button
+        class="nav-item"
+        data-page="favorites"
+    >
 
-<button class="nav-item" data-page="contact">
+        <i data-lucide="heart"></i>
 
-<i data-lucide="phone"></i>
+        <span>
+            Favoritos
+        </span>
 
-<span>Contato</span>
+    </button>
 
-</button>
+
+    <button
+        class="nav-item"
+        data-page="contact"
+    >
+
+        <i data-lucide="phone"></i>
+
+        <span>
+            Contato
+        </span>
+
+    </button>
+
 
 </nav>
 
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
 <script src="app.js"></script>
+
 
 <script>
 
-lucide.createIcons();
+    lucide.createIcons();
 
 </script>
+
 
 </body>
 
